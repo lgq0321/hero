@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>英雄难过棍子关</title>
+  <script src="js/jquery-3.2.1.js"></script>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/play.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/random.js" type="text/javascript" charset="utf-8"></script>
+
+  <script type="text/javascript">
+  	$(function(){
+  		getInit();
+  		 
+   });
+  </script>
+
+ </head>
+ <body>
+	<div class="set-text">
+		<h2 class="play-title">关卡1</h2>
+		<a href="index.html">主菜单</a>
+	</div>
+	<a href="javascript:void(0);" class="btnClick"></a>
+	<div class="container">
+		<div class="stick"></div>
+		<div class="man"><img src="img/stick_stand.png"/></div>
+		<div class="well-box">
+        
+		</div>
+		<div class="dialog" style="display: none;">
+			<p class="dialog-btn" >	
+			</p>
+				<a href="javascript:void(0)" id="successPlay">进入下一关</a>
+				<a href="javascript:void(0)" class="play-agin">重玩</a>		
+		</div>
+		<div class="dialog1" style="display: none;">
+			<p class="dialog-btn" >	
+			</p>
+				<a href="javascript:void(0)" class="play-agin">重玩</a>
+				<a href="javascript:void(0)" id="failPlay">关闭</a>		
+		</div>
+	</div>
+ </body>
+</html>

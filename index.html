@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>英雄难过棍子关</title>
+  <script src="js/jquery-3.2.1.js"></script>
+  <script src="js/random.js" type="text/javascript" charset="utf-8"></script>
+  <link href="css/style.css" rel="stylesheet"/>
+  <script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+  	//默认隐藏  gameDialog  shadow
+  	
+//	window.onload=
+    //因为jQuery 它自动拥有那种 window.onload 机制 所以不用再加
+  	$(function(){
+  		//这里是设置 data变量存储游戏说明的内容
+			var data="游戏说明：<br/>1、该游戏为一款好玩的闯关挑战类游戏，可以锻炼玩家的判断力，提高玩家的敏捷思维能力。<br/>2、可以选择闯关模式或者挑战模式开始游戏。进入闯关模式后点击上方按钮可选择已解锁的关卡。<br/>3、闯关模式总共有十个关卡，每通过一个关卡，游戏难度会逐渐增大。如果玩家玩通关闯关模式，会获得W币奖励。<br/>4、挑战模式会计算积分，玩家可以在线存档，也可以提交自己的积分来查看自己的排行。<br/>5、本游戏引入了金币机制，即W币，初始金币为3个，玩家可以通过每日签到(+1 W币，连续签到从第二天起+2 W币)和完成每日的挑战任务(随机+7或8或9 W币)或玩通关闯关模式(随机+10或11或12 W币)来获得W币，W币可以用来购买道具。本游戏目前含有四种道具，分别是原地复活道具、水波特效道具、蝴蝶跟随鼠标特效道具和下雪特效道具。原地复活道具只可以在挑战模式使用，其它三种道具均为特效道具，每次购买后有七天使用期限，七天后需再次购买才可继续使用。";
+//			var ran=parseInt(Math.random()*20); //产生随机数
+//			$("body").removeClass().addClass("bg"+ran); //先移出已经加载的图片 再进行添加
+			getBgRandom();
+//		$(".gameDialog").css("display","none");
+		$("#game-info").click(function(){
+			
+			//这里是判断 如果说明存在就不在反复生成
+			if(!$(".gameDialog").get(0)){
+				
+				//这里是最简单的 也就是直接的方法 
+//			div.addClass("gameDialog");
+//			var div2=$("<div></div>");
+//			div2.addClass("info");
+//			div.append(a);
+//			var a=$("<a></a>");
+//			a.addClass("close");
+//			a.attr("href","javascript:void(0)");
+//			div2.after(a);
+//			var divShadow=$("<div class='shadow'></div>");
+			
+			//连接了上面的方法 ---简化方法
+			$("<div class='gameDialog'></div>")
+			.append($("<div class='info'></div>"))
+			.append($("<a href='javascript:void(0)' class='close'>返回</a>"))
+			.appendTo($("body"))
+			.after($("<div class='shadow' style='width:100%;height:100%;'></div>"));
+			
+			//这里加载上面说明书的内容
+			$(".info").html(data);
+			
+			} 
+			$(".gameDialog,.shadow").css("display","block")
+		});
+			
+				//这里是一开始 设置的 返回按钮  后来，看下面注释
+//		$(".gameDialog .close").click(funClose);
+//		function funClose(){
+//			$(".gameDialog,.shadow").css("display","none");
+//		}
+
+			//因为关闭按钮 找不到了 所以用的body
+
+		$("body").on("click",".gameDialog .close",function(){
+			$(".gameDialog,.shadow").css("display","none");
+		});
+		
+  	}
+  );
+  	
+  		
+//	$(".gameDialog").hide();
+  </script>
+ </head>
+ <body class="bg2">
+	<h2 class="title">英雄难过棍子关</h2>
+	<div class="main">
+		<a href="play.html">闯关模式</a>
+		<a href="javascript:void(0);" id="game-info">游戏说明</a>
+<!--		
+		<div >
+			<img src="img/18.jpg"/>
+		</div>-->
+	</div>
+	
+	<!--<div class="gameDialog" style="display: none;">
+		<div class="info">
+			游戏说明：<br />具体说明
+		</div>
+		<a href="javascript:void(0)" class="close">返回</a>
+	</div>
+	<div class="shadow" style="display: none; width: 100%;height: ;">
+		
+	</div>-->
+ </body>
+</html>
